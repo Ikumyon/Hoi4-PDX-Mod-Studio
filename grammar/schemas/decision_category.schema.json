@@ -1,0 +1,58 @@
+{
+  "file": {
+    "*": {
+      "type": "identifier",
+      "usage": "required",
+      "as": "id",
+      "children": {
+        "icon": {
+          "type": "sprite_id",
+          "usage": "optional"
+        },
+        "picture": {
+          "type": "sprite_id",
+          "usage": "optional"
+        },
+        "priority": {
+          "type": [
+            "number",
+            "children"
+          ],
+          "usage": "optional"
+        },
+        "allowed": {
+          "type": "trigger_children",
+          "usage": "optional"
+        },
+        "visible": {
+          "type": "trigger_children",
+          "usage": "optional"
+        },
+        "visible_when_empty": {
+          "type": "boolean",
+          "usage": "optional",
+          "allowed_values": [
+            "yes",
+            "no"
+          ]
+        },
+        "highlight_states": {
+          "type": "children",
+          "usage": "optional"
+        },
+        "map_area": {
+          "type": "children",
+          "usage": "optional"
+        },
+        "on_map_area": {
+          "type": "children",
+          "usage": "optional"
+        },
+        "scripted_gui": {
+          "type": "identifier",
+          "usage": "optional"
+        }
+      }
+    }
+  }
+}

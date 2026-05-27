@@ -1,0 +1,7 @@
+{
+  "id": "hoi4",
+  "name_key": "hoi4.name",
+  "desc_key": "hoi4.desc",
+  "version": "1.0.0",
+  "files": "files.toml"
+}

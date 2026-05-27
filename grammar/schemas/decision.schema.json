@@ -1,0 +1,213 @@
+{
+  "file": {
+    "*": {
+      "type": "identifier",
+      "usage": "required",
+      "as": "category",
+      "children": {
+        "*": {
+          "type": "identifier",
+          "usage": "required",
+          "as": "id",
+          "children": {
+            "icon": {
+              "type": "sprite_id",
+              "usage": "optional"
+            },
+            "priority": {
+              "type": "number",
+              "usage": "optional"
+            },
+            "cost": {
+              "type": "number",
+              "usage": "optional"
+            },
+            "fire_only_once": {
+              "type": "boolean",
+              "usage": "optional",
+              "allowed_values": [
+                "yes",
+                "no"
+              ]
+            },
+            "days_re_enable": {
+              "type": "integer",
+              "usage": "optional"
+            },
+            "days_remove": {
+              "type": "integer",
+              "usage": "optional"
+            },
+            "allowed": {
+              "type": "trigger_children",
+              "usage": "optional"
+            },
+            "visible": {
+              "type": "trigger_children",
+              "usage": "optional"
+            },
+            "available": {
+              "type": "trigger_children",
+              "usage": "optional"
+            },
+            "activation": {
+              "type": "trigger_children",
+              "usage": "optional"
+            },
+            "custom_cost_trigger": {
+              "type": "trigger_children",
+              "usage": "optional"
+            },
+            "custom_cost_text": {
+              "type": "localisation_key",
+              "usage": "optional"
+            },
+            "ai_hint_pp_cost": {
+              "type": "number",
+              "usage": "optional"
+            },
+            "complete_effect": {
+              "type": "effect_children",
+              "usage": "optional"
+            },
+            "remove_effect": {
+              "type": "effect_children",
+              "usage": "optional"
+            },
+            "cancel_effect": {
+              "type": "effect_children",
+              "usage": "optional"
+            },
+            "timeout_effect": {
+              "type": "effect_children",
+              "usage": "optional"
+            },
+            "cancel_trigger": {
+              "type": "trigger_children",
+              "usage": "optional"
+            },
+            "cancel_if_not_visible": {
+              "type": "boolean",
+              "usage": "optional",
+              "allowed_values": [
+                "yes",
+                "no"
+              ]
+            },
+            "modifier": {
+              "type": "modifier_children",
+              "usage": "optional"
+            },
+            "targeted_modifier": {
+              "type": "modifier_children",
+              "usage": "optional"
+            },
+            "ai_will_do": {
+              "type": "children",
+              "usage": "optional"
+            },
+            "fixed_random_seed": {
+              "type": "boolean",
+              "usage": "optional",
+              "allowed_values": [
+                "yes",
+                "no"
+              ]
+            },
+            "highlight_states": {
+              "type": "children",
+              "usage": "optional"
+            },
+            "war_with_on_remove": {
+              "type": "country_tag",
+              "usage": "optional"
+            },
+            "war_with_target_on_complete": {
+              "type": "boolean",
+              "usage": "optional",
+              "allowed_values": [
+                "yes",
+                "no"
+              ]
+            },
+            "war_with_target_on_remove": {
+              "type": "boolean",
+              "usage": "optional",
+              "allowed_values": [
+                "yes",
+                "no"
+              ]
+            },
+            "war_with_on_timeout": {
+              "type": "country_tag",
+              "usage": "optional"
+            },
+            "targets": {
+              "type": "children",
+              "usage": "optional",
+              "items": {
+                "type": "country_tag"
+              }
+            },
+            "targets_dynamic": {
+              "type": "boolean",
+              "usage": "optional",
+              "allowed_values": [
+                "yes",
+                "no"
+              ]
+            },
+            "target_array": {
+              "type": "identifier",
+              "usage": "optional"
+            },
+            "target_root_trigger": {
+              "type": "trigger_children",
+              "usage": "optional"
+            },
+            "target_trigger": {
+              "type": "trigger_children",
+              "usage": "optional"
+            },
+            "state_target": {
+              "type": [
+                "boolean",
+                "identifier"
+              ],
+              "usage": "optional"
+            },
+            "on_map_mode": {
+              "type": "enum",
+              "usage": "optional",
+              "allowed_values": [
+                "decision_view_only",
+                "map_and_decisions_view",
+                "map_only"
+              ]
+            },
+            "is_good": {
+              "type": "boolean",
+              "usage": "optional",
+              "allowed_values": [
+                "yes",
+                "no"
+              ]
+            },
+            "days_mission_timeout": {
+              "type": "integer",
+              "usage": "optional"
+            },
+            "selectable_mission": {
+              "type": "boolean",
+              "usage": "optional",
+              "allowed_values": [
+                "yes",
+                "no"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

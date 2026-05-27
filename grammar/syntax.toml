@@ -1,0 +1,21 @@
+[syntax]
+name = "clausewitz"
+assignment = "="
+block_open = "{"
+block_close = "}"
+comment = "#"
+
+[syntax.tokens]
+string_quote = "\""
+escape = "\\"
+
+[syntax.whitespace]
+newline_significant = false
+indent_significant = false
+
+[syntax.block]
+children_by = "block_delimiter"
+
+[syntax.statement]
+allow_assignment = true
+allow_bare_values = true
