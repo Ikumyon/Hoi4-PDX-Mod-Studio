@@ -1,205 +1,262 @@
 {
   "properties": {
     "*": {
+      "usage": "required",
       "select": {
         "left": {
-          "type": "identifier",
-          "name": "category"
+          "type": "id",
+          "key_capture": "decision_category"
         },
         "right": {
-          "type": "block"
-        }
-      },
-      "usage": "required",
-      "properties": {
-        "*": {
-          "select": {
-            "left": {
-              "type": "identifier",
-              "name": "id"
-            },
-            "right": {
-              "type": "block"
-            }
-          },
-          "usage": "required",
-          "properties": {
-            "icon": {
-              "type": "sprite_id",
-              "usage": "optional"
-            },
-            "priority": {
-              "type": "number",
-              "usage": "optional"
-            },
-            "cost": {
-              "type": "number",
-              "usage": "optional"
-            },
-            "fire_only_once": {
-              "type": "boolean",
-              "usage": "optional"
-            },
-            "days_re_enable": {
-              "type": "integer",
-              "usage": "optional"
-            },
-            "days_remove": {
-              "type": "integer",
-              "usage": "optional"
-            },
-            "allowed": {
-              "type": "block",
-              "context": "triggers",
-              "usage": "optional"
-            },
-            "visible": {
-              "type": "block",
-              "context": "triggers",
-              "usage": "optional"
-            },
-            "available": {
-              "type": "block",
-              "context": "triggers",
-              "usage": "optional"
-            },
-            "activation": {
-              "type": "block",
-              "context": "triggers",
-              "usage": "optional"
-            },
-            "custom_cost_trigger": {
-              "type": "block",
-              "context": "triggers",
-              "usage": "optional"
-            },
-            "custom_cost_text": {
-              "type": "localisation_key",
-              "usage": "optional"
-            },
-            "ai_hint_pp_cost": {
-              "type": "number",
-              "usage": "optional"
-            },
-            "complete_effect": {
-              "type": "block",
-              "context": "effects",
-              "usage": "optional"
-            },
-            "remove_effect": {
-              "type": "block",
-              "context": "effects",
-              "usage": "optional"
-            },
-            "cancel_effect": {
-              "type": "block",
-              "context": "effects",
-              "usage": "optional"
-            },
-            "timeout_effect": {
-              "type": "block",
-              "context": "effects",
-              "usage": "optional"
-            },
-            "cancel_trigger": {
-              "type": "block",
-              "context": "triggers",
-              "usage": "optional"
-            },
-            "cancel_if_not_visible": {
-              "type": "boolean",
-              "usage": "optional"
-            },
-            "modifier": {
-              "type": "block",
-              "context": "modifiers",
-              "usage": "optional"
-            },
-            "targeted_modifier": {
-              "type": "block",
-              "context": "modifiers",
-              "usage": "optional"
-            },
-            "ai_will_do": {
-              "type": "block",
-              "usage": "optional"
-            },
-            "fixed_random_seed": {
-              "type": "boolean",
-              "usage": "optional"
-            },
-            "highlight_states": {
-              "type": "block",
-              "usage": "optional"
-            },
-            "war_with_on_remove": {
-              "type": "country_tag",
-              "usage": "optional"
-            },
-            "war_with_target_on_complete": {
-              "type": "boolean",
-              "usage": "optional"
-            },
-            "war_with_target_on_remove": {
-              "type": "boolean",
-              "usage": "optional"
-            },
-            "war_with_on_timeout": {
-              "type": "country_tag",
-              "usage": "optional"
-            },
-            "targets": {
-              "type": "block",
-              "usage": "optional",
-              "items": {
-                "type": "country_tag"
+          "type": {
+            "is": "block",
+            "properties": {
+              "*": {
+                "usage": "required",
+                "select": {
+                  "left": {
+                    "type": "id",
+                    "key_capture": "decision"
+                  },
+                  "right": {
+                    "type": {
+                      "is": "block",
+                      "properties": {
+                        "icon": {
+                          "type": "string",
+                          "usage": "optional"
+                        },
+                        "priority": {
+                          "type": [
+                            "int",
+                            {
+                              "is": "block",
+                              "properties": "mtth"
+                            }
+                          ],
+                          "usage": "optional"
+                        },
+                        "rules": [
+                          {
+                            "rule": "exclusive",
+                            "severity": "warning",
+                            "message": "grammar.error.exclusive_cost",
+                            "usage": "optional",
+                            "cost": {
+                              "type": [
+                                "int",
+                                "variable"
+                              ]
+                            },
+                            "custom_cost_trigger": {
+                              "type": {
+                                "is": "block",
+                                "properties": "triggers"
+                              }
+                            }
+                          }
+                        ],
+                        "fire_only_once": {
+                          "type": "boolean",
+                          "usage": "optional"
+                        },
+                        "days_re_enable": {
+                          "type": "int",
+                          "usage": "optional"
+                        },
+                        "days_remove": {
+                          "type": "int",
+                          "usage": "optional"
+                        },
+                        "allowed": {
+                          "type": {
+                            "is": "block",
+                            "properties": "triggers"
+                          },
+                          "usage": "optional"
+                        },
+                        "visible": {
+                          "type": {
+                            "is": "block",
+                            "properties": "triggers"
+                          },
+                          "usage": "optional"
+                        },
+                        "available": {
+                          "type": {
+                            "is": "block",
+                            "properties": "triggers"
+                          },
+                          "usage": "optional"
+                        },
+                        "activation": {
+                          "type": {
+                            "is": "block",
+                            "properties": "triggers"
+                          },
+                          "usage": "optional"
+                        },
+                        "custom_cost_text": {
+                          "type": "string",
+                          "usage": "optional"
+                        },
+                        "ai_hint_pp_cost": {
+                          "type": "int",
+                          "usage": "optional"
+                        },
+                        "complete_effect": {
+                          "type": {
+                            "is": "block",
+                            "properties": "effects"
+                          },
+                          "usage": "optional"
+                        },
+                        "remove_effect": {
+                          "type": {
+                            "is": "block",
+                            "properties": "effects"
+                          },
+                          "usage": "optional"
+                        },
+                        "cancel_effect": {
+                          "type": {
+                            "is": "block",
+                            "properties": "effects"
+                          },
+                          "usage": "optional"
+                        },
+                        "timeout_effect": {
+                          "type": {
+                            "is": "block",
+                            "properties": "effects"
+                          },
+                          "usage": "optional"
+                        },
+                        "cancel_trigger": {
+                          "type": {
+                            "is": "block",
+                            "properties": "triggers"
+                          },
+                          "usage": "optional"
+                        },
+                        "cancel_if_not_visible": {
+                          "type": "boolean",
+                          "usage": "optional"
+                        },
+                        "modifier": {
+                          "type": {
+                            "is": "block",
+                            "properties": "modifiers"
+                          },
+                          "usage": "optional"
+                        },
+                        "targeted_modifier": {
+                          "type": {
+                            "is": "block",
+                            "properties": "modifiers"
+                          },
+                          "usage": "optional"
+                        },
+                        "ai_will_do": {
+                          "type": {
+                            "is": "block",
+                            "properties": "ai_will_do"
+                          },
+                          "usage": "optional"
+                        },
+                        "fixed_random_seed": {
+                          "type": "boolean",
+                          "usage": "optional"
+                        },
+                        "highlight_states": {
+                          "type": {
+                            "is": "block",
+                            "properties": "highlight_states"
+                          },
+                          "usage": "optional"
+                        },
+                        "war_with_on_remove": {
+                          "type": "country_tag",
+                          "usage": "optional"
+                        },
+                        "war_with_target_on_complete": {
+                          "type": "boolean",
+                          "usage": "optional"
+                        },
+                        "war_with_target_on_remove": {
+                          "type": "boolean",
+                          "usage": "optional"
+                        },
+                        "war_with_on_timeout": {
+                          "type": "country_tag",
+                          "usage": "optional"
+                        },
+                        "targets": {
+                          "type": {
+                            "is": "block",
+                            "items": {
+                              "type": "country_tag"
+                            }
+                          },
+                          "usage": "optional"
+                        },
+                        "targets_dynamic": {
+                          "type": "boolean",
+                          "usage": "optional"
+                        },
+                        "target_array": {
+                          "type": "id",
+                          "usage": "optional"
+                        },
+                        "target_root_trigger": {
+                          "type": {
+                            "is": "block",
+                            "properties": "triggers"
+                          },
+                          "usage": "optional"
+                        },
+                        "target_trigger": {
+                          "type": {
+                            "is": "block",
+                            "properties": "triggers"
+                          },
+                          "usage": "optional"
+                        },
+                        "state_target": {
+                          "type": [
+                            "boolean",
+                            "id"
+                          ],
+                          "usage": "optional"
+                        },
+                        "on_map_mode": {
+                          "type": {
+                            "is": "enum",
+                            "allowed_values": [
+                              "decision_view_only",
+                              "map_and_decisions_view",
+                              "map_only"
+                            ]
+                          },
+                          "usage": "optional"
+                        },
+                        "is_good": {
+                          "type": "boolean",
+                          "usage": "optional"
+                        },
+                        "days_mission_timeout": {
+                          "type": "int",
+                          "usage": "optional"
+                        },
+                        "selectable_mission": {
+                          "type": "boolean",
+                          "usage": "optional"
+                        }
+                      }
+                    }
+                  }
+                }
               }
-            },
-            "targets_dynamic": {
-              "type": "boolean",
-              "usage": "optional"
-            },
-            "target_array": {
-              "type": "identifier",
-              "usage": "optional"
-            },
-            "target_root_trigger": {
-              "type": "block",
-              "context": "triggers",
-              "usage": "optional"
-            },
-            "target_trigger": {
-              "type": "block",
-              "context": "triggers",
-              "usage": "optional"
-            },
-            "state_target": {
-              "type": [
-                "boolean",
-                "identifier"
-              ],
-              "usage": "optional"
-            },
-            "on_map_mode": {
-              "type": "enum",
-              "usage": "optional",
-              "allowed_values": [
-                "decision_view_only",
-                "map_and_decisions_view",
-                "map_only"
-              ]
-            },
-            "is_good": {
-              "type": "boolean",
-              "usage": "optional"
-            },
-            "days_mission_timeout": {
-              "type": "integer",
-              "usage": "optional"
-            },
-            "selectable_mission": {
-              "type": "boolean",
-              "usage": "optional"
             }
           }
         }

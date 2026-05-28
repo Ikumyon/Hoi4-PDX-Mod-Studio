@@ -1,61 +1,73 @@
 {
   "properties": {
     "*": {
+      "usage": "required",
       "select": {
         "left": {
           "type": "id",
           "name": "category"
         },
         "right": {
-          "type": "block"
-        }
-      },
-      "usage": "required",
-      "properties": {
-        "icon": {
-          "type": "string",
-          "usage": "optional"
-        },
-        "picture": {
-          "type": "string",
-          "usage": "optional"
-        },
-        "priority": {
-          "type": [
-            "int",
-            "block"
-          ],
-          "usage": "optional"
-        },
-        "allowed": {
-          "type": "block",
-          "context": "triggers",
-          "usage": "optional"
-        },
-        "visible": {
-          "type": "block",
-          "context": "triggers",
-          "usage": "optional"
-        },
-        "visible_when_empty": {
-          "type": "boolean",
-          "usage": "optional"
-        },
-        "highlight_states": {
-          "type": "block",
-          "usage": "optional"
-        },
-        "map_area": {
-          "type": "block",
-          "usage": "optional"
-        },
-        "on_map_area": {
-          "type": "block",
-          "usage": "optional"
-        },
-        "scripted_gui": {
-          "type": "string",
-          "usage": "optional"
+          "type": {
+            "is": "block",
+            "properties": {
+              "icon": {
+                "type": "string",
+                "usage": "optional"
+              },
+              "picture": {
+                "type": "string",
+                "usage": "optional"
+              },
+              "priority": {
+                "type": [
+                  "int",
+                  "block"
+                ],
+                "usage": "optional"
+              },
+              "allowed": {
+                "type": {
+                  "is": "block",
+                  "properties": "triggers"
+                },
+                "usage": "optional"
+              },
+              "visible": {
+                "type": {
+                  "is": "block",
+                  "properties": "triggers"
+                },
+                "usage": "optional"
+              },
+              "visible_when_empty": {
+                "type": "boolean",
+                "usage": "optional"
+              },
+              "highlight_states": {
+                "type": {
+                  "is": "block"
+                },
+                "usage": "optional"
+              },
+              "map_area": {
+                "type": {
+                  "is": "block"
+                },
+                "usage": "optional"
+              },
+              "on_map_area": {
+                "type": {
+                  "is": "block"
+                },
+                "usage": "optional"
+              },
+              "scripted_gui": {
+                "type": "string",
+                "usage": "optional"
+              }
+            }
+          }
         }
       }
     }
