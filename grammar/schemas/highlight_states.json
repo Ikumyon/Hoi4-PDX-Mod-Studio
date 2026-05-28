@@ -1,0 +1,71 @@
+{
+	"property_id": "highlight_states",
+	"properties": {
+	  	"highlight_state_targets": {
+			"type": {
+				"is": "block",
+				"properties": {
+					"state": {
+						"type": "int",
+						"usage": "optional",
+						"multiple": true
+					}
+				}
+			},
+			"usage": "optional"
+		},
+		"highlight_states_trigger": {
+			"type": {
+				"is": "block",
+				"properties": "triggers"
+			},
+			"usage": "optional"
+		},
+		"highlight_provinces": {
+			"type": {
+				"is": "block",
+				"items": {
+					"type": "int"
+				}
+			},
+			"usage": "optional"
+		},
+		"highlight_color_while_active": {
+			"type": {
+				"is": "enum",
+				"values": [
+					0,
+					1,
+					2,
+					3
+				]
+			},
+			"usage": "optional"
+		},
+		"highlight_color_before_active": {
+			"type": {
+				"is": "enum",
+				"values": [
+					0,
+					1,
+					2,
+					3
+				]
+			},
+			"usage": "optional"
+		},
+		"rules": [
+			{
+				"rule": "exclusive",
+				"usage": "optional",
+				"match": {"min": 1},
+				"severity": "warning",
+				"message": "grammar.error.exclusive_highlight_state_source",
+				"groups": [
+					["highlight_state_targets"],
+					["highlight_states_trigger"]
+				]
+			}
+		]
+	}
+}

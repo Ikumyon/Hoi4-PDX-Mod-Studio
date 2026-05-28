@@ -2,10 +2,11 @@
   "properties": {
     "*": {
       "usage": "required",
+      "multiple": true,
       "select": {
         "left": {
           "type": "id",
-          "name": "category"
+          "key_capture": "category"
         },
         "right": {
           "type": {
@@ -22,7 +23,10 @@
               "priority": {
                 "type": [
                   "int",
-                  "block"
+                  {
+                    "is": "block",
+                    "properties": "mtth"
+                  }
                 ],
                 "usage": "optional"
               },
@@ -46,19 +50,15 @@
               },
               "highlight_states": {
                 "type": {
-                  "is": "block"
-                },
-                "usage": "optional"
-              },
-              "map_area": {
-                "type": {
-                  "is": "block"
+                  "is": "block",
+                  "properties": "highlight_states"
                 },
                 "usage": "optional"
               },
               "on_map_area": {
                 "type": {
-                  "is": "block"
+                  "is": "block",
+                  "properties": "on_map_area"
                 },
                 "usage": "optional"
               },

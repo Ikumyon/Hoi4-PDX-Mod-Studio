@@ -39,21 +39,21 @@
                         "rules": [
                           {
                             "rule": "exclusive",
+                            "usage": "optional",
+                            "match": {
+                              "min": 1
+                            },
                             "severity": "warning",
                             "message": "grammar.error.exclusive_cost",
-                            "usage": "optional",
-                            "cost": {
-                              "type": [
-                                "int",
-                                "variable"
+                            "groups": [
+                              [
+                                "cost"
+                              ],
+                              [
+                                "custom_cost_trigger",
+                                "custom_cost_text"
                               ]
-                            },
-                            "custom_cost_trigger": {
-                              "type": {
-                                "is": "block",
-                                "properties": "triggers"
-                              }
-                            }
+                            ]
                           }
                         ],
                         "fire_only_once": {
@@ -90,6 +90,20 @@
                           "usage": "optional"
                         },
                         "activation": {
+                          "type": {
+                            "is": "block",
+                            "properties": "triggers"
+                          },
+                          "usage": "optional"
+                        },
+                        "cost": {
+                          "type": [
+                            "int",
+                            "variable"
+                          ],
+                          "usage": "optional"
+                        },
+                        "custom_cost_trigger": {
                           "type": {
                             "is": "block",
                             "properties": "triggers"
