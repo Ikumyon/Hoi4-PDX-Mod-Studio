@@ -1,55 +1,60 @@
 {
-  "file": {
+  "properties": {
     "*": {
-      "type": "identifier",
+      "select": {
+        "left": {
+          "type": "id",
+          "name": "category"
+        },
+        "right": {
+          "type": "block"
+        }
+      },
       "usage": "required",
-      "as": "id",
-      "children": {
+      "properties": {
         "icon": {
-          "type": "sprite_id",
+          "type": "string",
           "usage": "optional"
         },
         "picture": {
-          "type": "sprite_id",
+          "type": "string",
           "usage": "optional"
         },
         "priority": {
           "type": [
-            "number",
-            "children"
+            "int",
+            "block"
           ],
           "usage": "optional"
         },
         "allowed": {
-          "type": "trigger_children",
+          "type": "block",
+          "context": "triggers",
           "usage": "optional"
         },
         "visible": {
-          "type": "trigger_children",
+          "type": "block",
+          "context": "triggers",
           "usage": "optional"
         },
         "visible_when_empty": {
           "type": "boolean",
-          "usage": "optional",
-          "allowed_values": [
-            "yes",
-            "no"
-          ]
+          "usage": "optional"
         },
         "highlight_states": {
-          "type": "children",
+          "type": "block",
           "usage": "optional"
         },
         "map_area": {
-          "type": "children",
+          "type": "block",
           "usage": "optional"
         },
         "on_map_area": {
-          "type": "children",
+          "type": "block",
           "usage": "optional"
         },
         "scripted_gui": {
-          "type": "identifier",
+          "type": "string",
           "usage": "optional"
         }
       }
