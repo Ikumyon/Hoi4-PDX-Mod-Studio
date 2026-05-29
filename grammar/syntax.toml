@@ -1,8 +1,6 @@
 [syntax]
 name = "clausewitz"
 assignment = "="
-block_open = "{"
-block_close = "}"
 comment = "#"
 
 [syntax.tokens]
@@ -13,9 +11,7 @@ escape = "\\"
 newline_significant = false
 indent_significant = false
 
-[syntax.block]
-children_by = "block_delimiter"
-
-[syntax.statement]
-allow_assignment = true
-allow_bare_values = true
+[syntax.children]
+children_by = "delimiter"
+open = "{"
+close = "}"
