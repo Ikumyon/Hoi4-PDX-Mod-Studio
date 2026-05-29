@@ -1,6 +1,6 @@
 {
   "hoi4.name": "Hearts of Iron IV Syntax",
   "hoi4.desc": "Data-only grammar plugin for Hearts of Iron IV syntax assets.",
-  "files.decision_categories.name": "Decision Categories",
-  "files.decisions.name": "Decisions"
+  "grammar_modes.decision_categories.name": "Decision Categories",
+  "grammar_modes.decisions.name": "Decisions"
 }

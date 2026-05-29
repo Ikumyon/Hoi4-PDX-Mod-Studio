@@ -6,18 +6,18 @@ values = "grammar/values.toml"
 default = "en-US"
 en-US = "translations/en-US.json"
 
-[[files]]
+[[grammar_modes]]
 id = "decision_categories"
-name_key = "files.decision_categories.name"
+name_key = "grammar_modes.decision_categories.name"
 path = "common/decisions/categories/*.txt"
 schema = "grammar/schemas/decision_category.schema.json"
 role = "decision_category"
 extension = ".txt"
 encoding = "utf-8"
 
-[[files]]
+[[grammar_modes]]
 id = "decisions"
-name_key = "files.decisions.name"
+name_key = "grammar_modes.decisions.name"
 path = "common/decisions/*.txt"
 exclude = ["common/decisions/categories/*.txt"]
 schema = "grammar/schemas/decision.schema.json"
