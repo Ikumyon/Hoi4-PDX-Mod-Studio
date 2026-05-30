@@ -2,6 +2,7 @@
   "properties": {
     "*": {
       "usage": "required",
+      "multiple": true,
       "select": {
         "left": {
           "type": "id",
