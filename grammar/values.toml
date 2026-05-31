@@ -6,9 +6,14 @@ pattern = "^.*$"
 
 [value.int]
 pattern = "^-?[0-9]+$"
+min = -2147483648
+max = 2147483647
 
 [value.float]
 pattern = "^-?[0-9]+(\\.[0-9]+)?$"
+fixed_point_scale = 100000
+min = -2147483648.99999
+max = 2147483647.99999
 
 [value.date]
 pattern = "^[0-9]{4}\\.[0-9]{1,2}\\.[0-9]{1,2}$"
