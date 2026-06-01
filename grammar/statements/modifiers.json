@@ -1,0 +1,22 @@
+{
+  "property_id": "modifiers",
+  "properties": {
+    "*": {
+      "usage": "optional",
+      "multiple": true,
+      "select": {
+        "left": {
+          "type": "id"
+        },
+        "right": {
+          "type": [
+            "int",
+            "float",
+            "variable",
+            "expression"
+          ]
+        }
+      }
+    }
+  }
+}

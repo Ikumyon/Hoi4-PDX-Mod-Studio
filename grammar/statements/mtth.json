@@ -1,0 +1,74 @@
+{
+  "property_id": "mtth",
+  "properties": {
+    "days": {
+      "type": [
+        "int",
+        "float",
+        "variable",
+        "expression"
+      ],
+      "usage": "optional"
+    },
+    "months": {
+      "type": [
+        "int",
+        "float",
+        "variable",
+        "expression"
+      ],
+      "usage": "optional"
+    },
+    "years": {
+      "type": [
+        "int",
+        "float",
+        "variable",
+        "expression"
+      ],
+      "usage": "optional"
+    },
+    "factor": {
+      "type": [
+        "int",
+        "float",
+        "variable",
+        "expression"
+      ],
+      "usage": "optional"
+    },
+    "modifier": {
+      "type": {
+        "is": "block",
+        "properties": "mtth"
+      },
+      "usage": "optional",
+      "multiple": true
+    },
+    "*": {
+      "usage": "optional",
+      "multiple": true,
+      "select": {
+        "left": {
+          "type": "id"
+        },
+        "right": {
+          "type": [
+            "boolean",
+            "int",
+            "float",
+            "string",
+        "id",
+        "variable_ref",
+        "variable",
+        "expression",
+            {
+              "is": "block",
+              "properties": "triggers"
+            }
+          ]
+        }
+      }
+    }
+  }
+}
