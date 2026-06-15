@@ -1,24 +1,7 @@
 [grammar]
 syntax = "grammar/syntax.toml"
-values = "grammar/values.toml"
+rules = "cwt"
 
-[i18n]
+[translations]
+folder = "translations"
 default = "en-US"
-en-US = "translations/en-US.json"
-
-[[grammar_modes]]
-id = "decision_categories"
-name_key = "grammar_modes.decision_categories.name"
-path = "common/decisions/categories/*.txt"
-schema = "grammar/schemas/decision_category_schema.json"
-extension = ".txt"
-encoding = "utf-8"
-
-[[grammar_modes]]
-id = "decisions"
-name_key = "grammar_modes.decisions.name"
-path = "common/decisions/*.txt"
-exclude = ["common/decisions/categories/*.txt"]
-schema = "grammar/schemas/decision_schema.json"
-extension = ".txt"
-encoding = "utf-8"

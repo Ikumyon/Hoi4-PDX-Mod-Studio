@@ -4,14 +4,14 @@ assignment = "="
 comment = "#"
 
 [syntax.tokens]
-string_quote = "\""
+string_quotes = ["\""]
 escape = "\\"
+comparison_operators = ["<", ">", "<=", ">=", "!=", "=="]
 
 [syntax.whitespace]
 newline_significant = false
-indent_significant = false
 
 [syntax.children]
-children_by = "delimiter"
+children_by = "bracket"
 open = "{"
 close = "}"
