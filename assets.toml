@@ -1,0 +1,7 @@
+[syntax]
+syntax = "syntax.toml"
+directory = "cwt"
+
+[translations]
+directory = "translations"
+default = "en-US"

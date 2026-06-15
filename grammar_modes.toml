@@ -1,7 +1,0 @@
-[grammar]
-syntax = "grammar/syntax.toml"
-rules = "cwt"
-
-[translations]
-folder = "translations"
-default = "en-US"
